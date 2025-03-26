@@ -11,7 +11,7 @@ for file in "${CONFIG_FILES[@]}"; do
     ln -sf "$DOTFILES_DIR/$file" "$HOME/$file"
     echo "  链接 $file → $DOTFILES_DIR/$file"
   else
-    echo "  跳过 $file（在 dotfiles 中未找到）"
+    echo "  跳过 $file （在 dotfiles 中未找到）"
   fi
 done
 
