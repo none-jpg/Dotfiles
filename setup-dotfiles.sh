@@ -7,6 +7,10 @@ DOTFILES_DIR="$HOME/dotfiles"
 # === 创建 dotfiles 目录（如果还没有） ===
 mkdir -p "$DOTFILES_DIR"
 
+# === 添加提示文件，避免误删 ===
+NOTICE_FILE="$DOTFILES_DIR/DO_NOT_DELETE_THIS_FOLDER"
+touch "$NOTICE_FILE"
+
 # === 备份并复制配置文件 ===
 echo "备份并复制配置文件到 $DOTFILES_DIR"
 for file in "${CONFIG_FILES[@]}"; do
