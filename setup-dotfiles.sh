@@ -45,4 +45,4 @@ for file in "${CONFIG_FILES[@]}"; do
     done
 
 # === 完成提示 ===
-echo "✔️ dotfiles 设置完成。配置文件已备份、注释并链接到 ${DOTFILES_DIR} 。"
+echo "✔️ dotfiles 设置完成。配置文件已链接到 ${DOTFILES_DIR} 。"
