@@ -13,7 +13,9 @@ for file in "${CONFIG_FILES[@]}"; do
   if [ -f "$HOME/$file" ]; then
     echo "  备份 $file → $DOTFILES_DIR/$file.bak"
     cp "$HOME/$file" "$DOTFILES_DIR/$file.bak"
-    cp "$HOME/$file" "$DOTFILES_DIR/$file"
+    if [ ! "$HOME/$file" -ef "$DOTFILES_DIR/$file" ]; then
+      cp "$HOME/$file" "$DOTFILES_DIR/$file"
+    fi
   fi
     done
 
