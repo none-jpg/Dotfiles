@@ -11,10 +11,11 @@ mkdir -p "$DOTFILES_DIR"
 echo "备份并复制配置文件到 $DOTFILES_DIR"
 for file in "${CONFIG_FILES[@]}"; do
   if [ -f "$HOME/$file" ]; then
-    echo "  备份 $file → $DOTFILES_DIR/$file.bak"
-    cp "$HOME/$file" "$DOTFILES_DIR/$file.bak"
     if [ ! "$HOME/$file" -ef "$DOTFILES_DIR/$file" ]; then
+      echo "  复制 $file → $DOTFILES_DIR/$file"
       cp "$HOME/$file" "$DOTFILES_DIR/$file"
+    else
+      echo "  无需复制 $file ，因为已位于 $DOTFILES_DIR/$file"
     fi
   fi
     done
